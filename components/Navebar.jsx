@@ -62,7 +62,7 @@ export default function Navbar() {
               />
             </svg>
           ) : (
-            // ☰ MENU ICON
+            // ☰ MENU 
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
               <path
                 d="M3 7h24M3 14h24M3 21h24"
