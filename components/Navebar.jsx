@@ -6,18 +6,18 @@ import { useState } from "react";
 
 export default function Navbar() {
   const navLinks = [
-    { name: "JOIN", url: "join-1" },
+    { name: "JOIN", url: "join" },
     { name: "ABOUT", url: "about" },
     { name: "REVIEW", url: "review" },
     { name: "ADD LISTING", url: "add-listing" },
-    { name: "CLAIM RESTAURANT", url: "claim-a-restaurant-1" },
+    { name: "CLAIM RESTAURANT", url: "claim-a-restaurant" },
     { name: "ADVERTISE", url: "advertising" },
   ];
   const [open, setOpen] = useState(false);
   // console.log(sitedata);
   return (
     <div className="relative">
-      <nav className="sticky  w-full lg:px-8 px-4  flex items-center text-[var(--secondary)] lg:py-4 py-2 body-subtitle justify-between">
+      <nav className="sticky  w-full lg:px-8 px-4  flex items-center  lg:py-4 py-2 body-subtitle justify-between">
         <div className="flex items-center gap-1">
           <Link href={"/"} className="flex items-center gap-1">
             <Image

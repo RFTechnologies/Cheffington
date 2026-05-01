@@ -4,26 +4,26 @@ import React from "react";
 import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const footerLinks = [
-  { name: "Claim Your Business", url: "#" },
-  { name: "About Us", url: "#" },
-  { name: "Privacy Policy", url: "#" },
-  { name: "Terms & Conditions", url: "#" },
-  { name: "Advertise With Us", url: "#" },
+  { name: "Claim Your Business", url: "/claim-a-restaurant" },
+  { name: "About Us", url: "/about" },
+  { name: "Privacy Policy", url: "/privacy-policy" },
+  { name: "Terms & Conditions", url: "/terms" },
+  { name: "Advertise With Us", url: "/advertising" },
 ];
 const Footer = () => {
   return (
     <footer className="bg-black">
-      <div className=" text-white py-12 px-4 md:px-16 page-width m-auto">
-        <div className="  w-full lg:px-8 px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className=" text-white py-12 px-4 md:px-16 page-width">
+        <div className="">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
             {/* Left Section: Branding & Newsletter */}
-            <div className="flex flex-col space-y-6">
+            <div className="flex flex-col space-y-6  ">
               {/* Logo & Brand Name */}
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center">
                 <div className="relative">
                   <Link href={"/"}>
                     <Image
-                      src="/Cheffington-white-logo.png"
+                      src="/Cheffington-white.png"
                       alt="Cheffington Logo"
                       width={400}
                       height={196}
@@ -35,18 +35,17 @@ const Footer = () => {
 
               {/* Newsletter Signup */}
               <div className="space-y-4">
-                <h3 className="text-[#FF8400] font-black text-2xl uppercase tracking-wider">
+                <h3 className="text-[#FF8400] font-black lg:text-4xl text-3xl uppercase">
                   Eat the Newsletter
                 </h3>
                 <form className="flex flex-col sm:flex-row gap-3">
                   <input
                     type="email"
-                    placeholder="Email Address"
-                    className="bg-gray-300 text-black px-4 py-3 rounded-sm w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="bg-gray-300 text-black px-4 py-3 rounded-sm w-full focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
                   <button
                     type="submit"
-                    className=" text-black font-bold py-3 px-8 rounded-md transition-colors uppercase"
+                    className="button button--primary text-nowrap"
                   >
                     Sign Up
                   </button>
@@ -55,7 +54,7 @@ const Footer = () => {
             </div>
 
             {/* Right Section: Links & Socials */}
-            <div className="flex flex-col md:items-end gap-3">
+            <div className="flex flex-col md:items-end gap-3 sm:w-1/3 w-full ">
               <ul className="flex flex-col gap-3">
                 {footerLinks.map((item, index) => (
                   <li key={index}>

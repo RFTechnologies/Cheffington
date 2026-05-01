@@ -20,30 +20,30 @@ const Hero = () => {
           </p>
         </div>
         {/* Search Bar / Filter Section */}
-        <div className=" bg-transparent border-2 border-black rounded-lg p-6">
+        <div className=" bg-transparent border-black border-3 px-4 py-5 rounded-[9px] ">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
             <div className="flex flex-col space-y-2">
-              <label className="body uppercase">Cuisine</label>
+              <label className="uppercase text-xl">Cuisine</label>
               <input
                 type="text"
-                className="bg-transparent border-b border-black/30 focus:border-black outline-none pb-1"
+                className="bg-transparent border-b focus:border-black outline-none pb-1"
               />
             </div>
             <div className="flex flex-col space-y-2">
-              <label className="body uppercase">Location</label>
+              <label className="uppercase text-xl">Location</label>
               <input
                 type="text"
-                className="bg-transparent border-b border-black/30 focus:border-black outline-none pb-1"
+                className="bg-transparent border-b focus:border-black outline-none pb-1"
               />
             </div>
             <div className="flex flex-col space-y-2">
-              <label className="body uppercase">Chef</label>
+              <label className="uppercase text-xl">Chef</label>
               <input
                 type="text"
-                className="bg-transparent border-b border-black/30 focus:border-black outline-none pb-1"
+                className="bg-transparent border-b focus:border-black outline-none pb-1"
               />
             </div>
-            <button className="bg-[var(--primary)] hover:bg-[#FF8300] text-black font-black py-3 px-6 rounded-lg transition-all uppercase text-sm border">
+            <button className="bg-[#FF8300] hover:bg-[#FF8300]  py-6 px-8  rounded-lg transition-all uppercase font-bold">
               {`Let's Eat`}
             </button>
           </div>
