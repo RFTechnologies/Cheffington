@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-[var(--bg)]">
         <Navebar />
         {children}
-         <Footer />
+        <Footer />
       </body>
     </html>
   );

@@ -1,55 +1,62 @@
 "use client";
-const navLinks = [
-  { name: "JOIN", url: "join-1" },
-  { name: "ABOUT", url: "about" },
-  { name: "REVIEW", url: "review" },
-  { name: "ADD LISTING", url: "add-listing" },
-  { name: "CLAIM RESTAURANT", url: "claim-a-restaurant-1" },
-  { name: "ADVERTISE", url: "advertising" },
-  { name: "PROFILE", url: "sign-in", isImage: true },
-];
+import { sitedata } from "@/data/site";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Navbar() {
+  const navLinks = [
+    { name: "JOIN", url: "join-1" },
+    { name: "ABOUT", url: "about" },
+    { name: "REVIEW", url: "review" },
+    { name: "ADD LISTING", url: "add-listing" },
+    { name: "CLAIM RESTAURANT", url: "claim-a-restaurant-1" },
+    { name: "ADVERTISE", url: "advertising" },
+  ];
   const [open, setOpen] = useState(false);
-
+  // console.log(sitedata);
   return (
-    <div className="">
-      <nav className="sticky top-10 z-50 w-full px-6 md:px-16 lg:px-24 xl:px-32 flex items-center justify-between text-[var(--secondary)] py-5 body-subtitle">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <img src="/image1.png" alt="Chicken Chef" className="w-25 h-25" />
-
-          <a href="/" className="font-bold text-4xl leading-none">
-            Cheffington
-          </a>
+    <div className="relative">
+      <nav className="sticky  w-full lg:px-8 px-4  flex items-center text-[var(--secondary)] lg:py-4 py-2 body-subtitle justify-between">
+        <div className="flex items-center gap-1">
+          <Link href={"/"} className="flex items-center gap-1">
+            <Image
+              src={sitedata?.logo}
+              alt="Chicken Chef"
+              width={80}
+              height={60}
+              priority
+              className="object-center object-cover"
+            />
+            <span className="font-bold 2xl:text-6xl text-3xl leading-none max-sm:hidden">
+              Cheffington
+            </span>
+          </Link>
         </div>
 
         {/* Desktop Menu (CENTER) */}
-        <ul className="hidden md:flex items-center gap-10">
+        <ul className="hidden lg:flex items-center xl:gap-10 gap-6">
           {navLinks.map((item, index) => (
             <li key={index}>
-              <a className="hover:text-gray-500/80 transition" href={item.url}>
-                {item.isImage ? (
-                  <Image
-                    src="/Layer.png"
-                    alt="Profile"
-                    width={28}
-                    height={28}
-                  />
-                ) : (
-                  item.name
-                )}
+              <a
+                className="hover:text-gray-500/80 transition leading-[-6%] max-xl:text-[16px]"
+                href={item.url}
+              >
+                {item.name}
               </a>
             </li>
           ))}
+          <li>
+            <Link href={"/sign-in"}>
+              <Image src="/Layer.png" alt="Profile" width={28} height={28} />
+            </Link>
+          </li>
         </ul>
         {/* Mobile Button */}
         <button
           onClick={() => setOpen(!open)}
           aria-label="menu-btn"
-          className="md:hidden ml-auto active:scale-90 transition"
+          className="lg:hidden ml-auto active:scale-90 transition"
         >
           {open ? (
             // ❌ CLOSE ICON (X)
@@ -76,37 +83,24 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {open && (
-          <div className="absolute top-[70px] left-0 w-full bg-[var(--bg)] p-6 md:hidden shadow">
-            <ul className="flex flex-col space-y-4 text-lg">
+          <div className="absolute top-[100px] left-0 w-full bg-[var(--bg)] p-6 lg:hidden shadow">
+            <ul className="flex flex-col space-y-6 text-lg">
+              {navLinks.map((item, index) => (
+                <li key={index}>
+                  <a href={item.url} className="text-sm">
+                    {item.name}
+                  </a>
+                </li>
+              ))}
               <li>
-                <a href="#" className="text-sm">
-                  JOIN
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm">
-                  ABOUT
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm">
-                  REVIEW
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm">
-                  ADD LISTING
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm">
-                  CLAIM RESTAURANT
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm">
-                  ADVERTISE
-                </a>
+                <Link href={"/sign-in"}>
+                  <Image
+                    src="/Layer.png"
+                    alt="Profile"
+                    width={28}
+                    height={28}
+                  />
+                </Link>
               </li>
             </ul>
           </div>

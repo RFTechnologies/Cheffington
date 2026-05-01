@@ -56,16 +56,26 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 }
+
+body {
+  background-color: var(--bg);
+}
 .page-width {
-  max-width: 990px;
+  max-width: 1160px;
   margin: auto;
+  padding-inline: 20px;
+}
+.page-width-narrow {
+  max-width: 950px;
+  margin: auto;
+  padding-inline: 20px;
 }
 /* TITLE */
 .title {
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 100px;
-  letter-spacing: -0.06em;
+  letter-spacing: -6%;
   line-height: 100%;
 }
 
@@ -74,8 +84,8 @@
   font-family: var(--font-sans);
   font-weight: 400;
   font-size: 50px;
-  letter-spacing: -0.08em;
-  line-height: 46px;
+  letter-spacing: -8%;
+  line-height: 100%;
 }
 
 /* BODY TITLE */
@@ -104,6 +114,30 @@
   line-height: 21px;
 }
 
+@media (max-width: 768px) {
+  .title {
+    font-size: 46px;
+    letter-spacing: -0.04em;
+  }
+  .subtitle {
+    font-size: 25px;
+    letter-spacing: -0.06em;
+    line-height: 30px;
+  }
+  .body-title {
+    font-size: 16px;
+    letter-spacing: -0.04em;
+  }
+  .body-subtitle {
+    font-size: 16px;
+    letter-spacing: -0.04em;
+  }
+  .body-text {
+    font-size: 16px;
+    letter-spacing: -0.04em;
+    line-height: 18px;
+  }
+}
 @layer base {
   * {
     @apply border-border outline-ring/50;
