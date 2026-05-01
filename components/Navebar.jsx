@@ -79,32 +79,32 @@ export default function Navbar() {
           <div className="absolute top-[70px] left-0 w-full bg-[var(--bg)] p-6 md:hidden shadow">
             <ul className="flex flex-col space-y-4 text-lg">
               <li>
-                <a href="#" className="text-sm">
+                <a href="join-1" className="text-sm">
                   JOIN
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm">
+                <a href="about" className="text-sm">
                   ABOUT
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm">
+                <a href="review" className="text-sm">
                   REVIEW
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm">
+                <a href="add-listing" className="text-sm">
                   ADD LISTING
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm">
+                <a href="claim-a-restaurant-1" className="text-sm">
                   CLAIM RESTAURANT
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm">
+                <a href="advertising" className="text-sm">
                   ADVERTISE
                 </a>
               </li>
