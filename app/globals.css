@@ -61,6 +61,10 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 }
+.page-width{
+  max-width: 990px;
+  margin:auto;
+}
 /* TITLE */
 .title {
   font-family: var(--font-sans);

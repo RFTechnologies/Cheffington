@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -8,15 +9,9 @@ export default function Navbar() {
   return (
     <div className="">
       <nav className="sticky top-10 z-50 w-full px-6 md:px-16 lg:px-24 xl:px-32 flex items-center justify-between text-[var(--secondary)] py-5 body-subtitle">
-       
-
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <img
-            src="/image1.png"
-            alt="Chicken Chef"
-            className="w-25 h-25"
-          />
+          <img src="/image1.png" alt="Chicken Chef" className="w-25 h-25" />
 
           <a href="/" className="font-bold text-4xl leading-none">
             Cheffington
@@ -36,23 +31,36 @@ export default function Navbar() {
             </a>
           </li>
           <li>
-            <a className="hover:text-gray-500/80 transition" href="#">
+            <a className="hover:text-gray-500/80 transition" href="review">
               REVIEW
             </a>
           </li>
           <li>
-            <a className="hover:text-gray-500/80 transition" href="#">
+            <a className="hover:text-gray-500/80 transition" href="add-listing">
               ADD LISTING
             </a>
           </li>
           <li>
-            <a className="hover:text-gray-500/80 transition" href="#">
+            <a
+              className="hover:text-gray-500/80 transition"
+              href="claim-a-restaurant-1"
+            >
               CLAIM RESTAURANT
             </a>
           </li>
           <li>
-            <a className="hover:text-gray-500/80 transition" href="#">
+            <a className="hover:text-gray-500/80 transition" href="advertising">
               ADVERTISE
+            </a>
+          </li>
+          <li>
+            <a className="hover:text-gray-500/80 transition" href="sign-in">
+              <Image
+                src="/Layer.png"
+                alt="Profile"
+                width={28}
+                height={28}
+              />
             </a>
           </li>
         </ul>
