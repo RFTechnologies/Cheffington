@@ -78,7 +78,8 @@ export default function SignInPage() {
               className="w-32 h-32 object-contain"
                
             />
-            {/* If you don't have the image yet, this represents the knife-wielding chicken location */}
+            {/* If you don't have the image yet, this represents
+             */}
           </div>
         </div>
       </div>
