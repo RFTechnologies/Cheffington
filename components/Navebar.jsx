@@ -1,5 +1,13 @@
 "use client";
-
+const navLinks = [
+  { name: "JOIN", url: "join-1" },
+  { name: "ABOUT", url: "about" },
+  { name: "REVIEW", url: "review" },
+  { name: "ADD LISTING", url: "add-listing" },
+  { name: "CLAIM RESTAURANT", url: "claim-a-restaurant-1" },
+  { name: "ADVERTISE", url: "advertising" },
+  { name: "PROFILE", url: "sign-in", isImage: true },
+];
 import Image from "next/image";
 import { useState } from "react";
 
@@ -20,51 +28,23 @@ export default function Navbar() {
 
         {/* Desktop Menu (CENTER) */}
         <ul className="hidden md:flex items-center gap-10">
-          <li>
-            <a className="hover:text-gray-500/80 transition" href="join-1">
-              JOIN
-            </a>
-          </li>
-          <li>
-            <a className="hover:text-gray-500/80 transition" href="about">
-              ABOUT
-            </a>
-          </li>
-          <li>
-            <a className="hover:text-gray-500/80 transition" href="review">
-              REVIEW
-            </a>
-          </li>
-          <li>
-            <a className="hover:text-gray-500/80 transition" href="add-listing">
-              ADD LISTING
-            </a>
-          </li>
-          <li>
-            <a
-              className="hover:text-gray-500/80 transition"
-              href="claim-a-restaurant-1"
-            >
-              CLAIM RESTAURANT
-            </a>
-          </li>
-          <li>
-            <a className="hover:text-gray-500/80 transition" href="advertising">
-              ADVERTISE
-            </a>
-          </li>
-          <li>
-            <a className="hover:text-gray-500/80 transition" href="sign-in">
-              <Image
-                src="/Layer.png"
-                alt="Profile"
-                width={28}
-                height={28}
-              />
-            </a>
-          </li>
+          {navLinks.map((item, index) => (
+            <li key={index}>
+              <a className="hover:text-gray-500/80 transition" href={item.url}>
+                {item.isImage ? (
+                  <Image
+                    src="/Layer.png"
+                    alt="Profile"
+                    width={28}
+                    height={28}
+                  />
+                ) : (
+                  item.name
+                )}
+              </a>
+            </li>
+          ))}
         </ul>
-
         {/* Mobile Button */}
         <button
           onClick={() => setOpen(!open)}

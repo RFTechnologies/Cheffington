@@ -1,22 +1,24 @@
 import React from "react";
 import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
+const footerLinks = [
+  { name: "Claim Your Business", url: "#" },
+  { name: "About Us", url: "#" },
+  { name: "Privacy Policy", url: "#" },
+  { name: "Terms & Conditions", url: "#" },
+  { name: "Advertise With Us", url: "#" },
+];
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-12 px-6 md:px-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-        
         {/* Left Section: Branding & Newsletter */}
         <div className="flex flex-col space-y-6">
           {/* Logo & Brand Name */}
           <div className="flex items-center space-x-3">
             <div className="relative w-12 h-12">
               {/* Replace with your actual <img> tag */}
-              <img 
-                src="/" 
-                alt="Cheffington Logo" 
-                className="object-contain"
-              />
+              <img src="/" alt="Cheffington Logo" className="object-contain" />
             </div>
             <h2 className="text-4xl font-bold tracking-tight">Cheffington</h2>
           </div>
@@ -45,11 +47,16 @@ const Footer = () => {
         {/* Right Section: Links & Socials */}
         <div className="flex flex-col md:items-end justify-between">
           <ul className="flex flex-col gap-2 text-sm">
-            <li><a href="#" className="hover:text-[#FF8400] transition-colors">Claim Your Business</a></li>
-            <li><a href="#" className="hover:text-[#FF8400] transition-colors">About Us</a></li>
-            <li><a href="#" className="hover:text-[#FF8400] transition-colors">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-[#FF8400] transition-colors">Terms & Conditions</a></li>
-            <li><a href="#" className="hover:text-[#FF8400] transition-colors">Advertise With Us</a></li>
+            {footerLinks.map((item, index) => (
+              <li key={index}>
+                <a
+                  href={item.url}
+                  className="hover:text-[#FF8400] transition-colors"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
           </ul>
 
           {/* Social Icons */}
@@ -65,7 +72,6 @@ const Footer = () => {
             </a>
           </div>
         </div>
-
       </div>
     </footer>
   );
