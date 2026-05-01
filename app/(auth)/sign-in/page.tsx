@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export default function SignInPage() {
@@ -45,12 +46,14 @@ export default function SignInPage() {
           </div>
 
           {/* Sign In Button */}
+          <Link href="/claim-a-restaurant-3">
           <button
             type="submit"
             className="w-full py-4 bg-[#FF8400] text-black font-bold uppercase tracking-widest rounded shadow-md hover:bg-[#e67700] transition-colors"
           >
             SIGN IN
           </button>
+          </Link>
 
           {/* Footer Links */}
           <div className="flex justify-between text-sm mt-4">
