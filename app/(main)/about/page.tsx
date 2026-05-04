@@ -2,9 +2,9 @@ import React from 'react';
 
 const AboutUs = () => {
   return (
-    <div className="bg-[var(--bg)] py-20 px-6 font-sans text-black">
+    <div className="bg-[var(--bg)] py-20 px-4 font-sans text-black">
       <div className="max-w-4xl mx-auto flex flex-col items-center">
-        
+
         {/* About Us Header */}
         <h1 className="title md:text-8xl font-black tracking-tighter mb-12">
           About Us
@@ -12,18 +12,18 @@ const AboutUs = () => {
 
         {/* Text Content Area */}
         <div className="space-y-8 max-w-3xl mb-24">
-          <p className="body-text md:text-2xl tracking-tight leading-tight">
+          <p className="text-body md:text-2xl tracking-tight leading-tight btn-primary">
             Tired of scanning restaurant reviews from your dad’s dentist’s brother who hates spicy food?
           </p>
-          
+
           <p className="body-text md:text-2xl tracking-tight leading-tight">
-            Imagine getting restaurant recommendations from people who actually know good food. 
+            Imagine getting restaurant recommendations from people who actually know good food.
             That’s right. We’re talking about real reviews from your favorite chefs.
           </p>
 
           <p className="body-text md:text-2xl tracking-tight leading-tight">
-            Cheffington highlights the restaurants, delis, bars, taquerias, diners, bodegas, 
-            and dives chefs love. We verify all our Cheffington members to ensure you get 
+            Cheffington highlights the restaurants, delis, bars, taquerias, diners, bodegas,
+            and dives chefs love. We verify all our Cheffington members to ensure you get
             the full flavor on where to eat no matter where you are.
           </p>
 
@@ -53,13 +53,13 @@ const AboutUs = () => {
                 <label className="text font-black uppercase">Chef</label>
                 <input type="body-text" className="bg-transparent border-b border-black/30 focus:border-black outline-none pb-1" />
               </div>
-              
+
               {/* Button with Blue T Icon */}
               <div className="relative">
                 <button className="w-full bg-[#FF8400] text-black font-black py-3 px-4 rounded-lg border-2 border-black uppercase text-xs transition-transform active:translate-y-[1px]">
                   Let's Eat
                 </button>
-                
+
               </div>
             </div>
           </div>

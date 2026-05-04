@@ -2,14 +2,13 @@ import React from 'react';
 
 export default function AddEstablishmentForm() {
   return (
-    <div className="min-h-screen bg-[var(--bg)] py-12 px-4 flex justify-center">
+    <main className="min-h-screen  py-12 px-4 flex justify-center">
       <div className="max-w-2xl w-full">
         <h1 className="subtitle mb-8 text-black">
           Add an <span className="text-[#FF8400]">Establishment</span>
         </h1>
 
-        <form className="bg-[var(--bg)] border border-black p-8 ">
-          {/* General Info Section */}
+        <form className="b border border-black p-8 ">
           <div className="space-y-6">
             <div>
               <label className="block text-xs font-bold mb-1">Restaurant Name*</label>
@@ -45,7 +44,7 @@ export default function AddEstablishmentForm() {
             <div className="space-y-6">
               <input type="text" placeholder="Address Line 1" className="w-full border-b border-gray-400 py-2 focus:border-black outline-none" />
               <input type="text" placeholder="Address Line 2" className="w-full border-b border-gray-400 py-2 focus:border-black outline-none" />
-              
+
               <div className="grid grid-cols-2 gap-6">
                 <input type="text" placeholder="City" className="w-full border-b border-gray-400 py-2 focus:border-black outline-none" />
                 <input type="text" placeholder="State" className="w-full border-b border-gray-400 py-2 focus:border-black outline-none" />
@@ -73,8 +72,8 @@ export default function AddEstablishmentForm() {
             <p className="text-xs font-bold mb-4">Check all that apply:</p>
             <div className="grid grid-cols-2 gap-y-3">
               {[
-                "Takes Reservations", "Full Bar", "Pet Friendly", "Wine & Beer", 
-                "Kid Friendly", "Wheelchair Accessible", "Outdoor Seating", 
+                "Takes Reservations", "Full Bar", "Pet Friendly", "Wine & Beer",
+                "Kid Friendly", "Wheelchair Accessible", "Outdoor Seating",
                 "Accepts Credit Cards", "Full Bar", "Take-Out", "Delivery", "Wifi"
               ].map((item, idx) => (
                 <label key={idx} className="flex items-center space-x-3 cursor-pointer group">
@@ -87,9 +86,9 @@ export default function AddEstablishmentForm() {
 
           {/* Chef's Notes Section */}
           <div className="mt-10">
-            <h2 className="text-xl font-black mb-1">Share your Chef's Notes...</h2>
-            <p className="text-xs mb-4">Don't forget to tell us about...</p>
-            
+            <h2 className="text-xl font-black mb-1"> {`${"Share your Chef's Notes..."}`}</h2>
+            <p className="text-xs mb-4"> {`${"Don't forget to tell us about..."}`}</p>
+
             <div className="flex gap-2 mb-4">
               {['your favorite dishes', 'the experience', 'the ambiance'].map((tag) => (
                 <span key={tag} className="bg-black text-white text-[10px] px-3 py-1 uppercase tracking-tighter">
@@ -99,7 +98,7 @@ export default function AddEstablishmentForm() {
             </div>
 
             <div className="relative">
-              <textarea 
+              <textarea
                 className="w-full border border-gray-400 h-48 p-4 focus:ring-1 focus:ring-black outline-none resize-none"
                 placeholder=""
               ></textarea>
@@ -111,8 +110,8 @@ export default function AddEstablishmentForm() {
 
           {/* Submit Button */}
           <div className="mt-8 flex justify-center">
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="bg-[#FF8400] text-black font-black px-12 py-3 rounded-lg hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all"
             >
               POST
@@ -120,6 +119,6 @@ export default function AddEstablishmentForm() {
           </div>
         </form>
       </div>
-    </div>
+    </main>
   );
 }
