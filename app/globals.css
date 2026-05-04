@@ -4,7 +4,7 @@
 
 @layer components {
   .input-field {
-    @apply w-full border-b border-gray-400 py-2 outline-none bg-transparent;
+    @apply w-full border-b border-gray-400 py-2 outline-none bg-transparent text-[20px] transition-all duration-300 ease-in-out max-sm:!text-[16px];
   }
 
   .input-field:focus {
@@ -75,7 +75,7 @@ body {
   padding-inline: 20px;
 }
 .page-width-narrow {
-  max-width: 950px;
+  max-width: 957px;
   margin: auto;
   padding-inline: 20px;
 }
@@ -193,6 +193,15 @@ label {
   }
   .text-40 {
     font-size: 24px;
+  }
+  input:not([type="checkbox"]) {
+    min-height: 48px;
+  }
+  label {
+    font-size: 18px;
+  }
+  ::placeholder {
+    font-size: 16px;
   }
 }
 @layer base {

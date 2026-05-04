@@ -4,13 +4,13 @@ import { useState } from 'react'
 const AddListing = () => {
     const [value, setValue] = useState("");
     return (
-        <main className="min-h-screen  py-12 px-4 flex justify-center">
+        <section className="md:pb-44 md:pt-20 py-10">
             <div className="page-width w-full">
-                <h1 className="title pt-20 pb-11">
+                <h1 className="title  md:pb-11 pb-6 text-center">
                     Add an <span className="text-[#FF8400]">Establishment</span>
                 </h1>
 
-                <form className="border-2 rounded-3xl border-black px-10 py-12 ">
+                <form className="border-3 rounded-[9px] border-black md:px-10! md:py-12! py-8! px-4! page-width-narrow">
                     <div className="space-y-6">
                         <div>
                             <label className="">Restaurant Name*</label>
@@ -47,12 +47,12 @@ const AddListing = () => {
                             <input type="text" placeholder="Address Line 1" className="input-field" />
                             <input type="text" placeholder="Address Line 2" className="input-field" />
 
-                            <div className="grid grid-cols-2 gap-6">
+                            <div className="grid md:grid-cols-2 gap-6">
                                 <input type="text" placeholder="City" className="input-field" />
                                 <input type="text" placeholder="State" className="input-field" />
                             </div>
 
-                            <div className="grid grid-cols-2 gap-6">
+                            <div className="grid md:grid-cols-2 gap-6">
                                 <input type="text" placeholder="Zip Code" className="input-field" />
                                 <input type="text" placeholder="Country" className="input-field" />
                             </div>
@@ -60,21 +60,21 @@ const AddListing = () => {
                     </div>
 
                     {/* File Upload */}
-                    <div className="mt-10">
+                    <div className="mt-10 ">
                         <label className="block">
                             Upload Logo or Featured Image (optional)
                         </label>
 
-                        <label className="block mt-8 border-2 border-[#FFF1E1]   border-dashed   p-12 text-center rounded-[6px] cursor-pointer bg-transparent">
+                        <label className="block mt-8 border border-dashed md:py-26 md:px-12 px-4 py-10 text-center cursor-pointer bg-transparent ">
 
                             <input
                                 type="file"
                                 className="hidden"
                             />
 
-                            <p className="text-xs text-gray-500">
+                            <p className="text-[20px] font-normal text-black/50 max-sm:text-[16px]">
                                 Drag & Drop Files,{" "}
-                                <span className="underline text-black font-semibold">
+                                <span className="underline text-black/50 ">
                                     Choose Files to Upload
                                 </span>
                             </p>
@@ -85,15 +85,15 @@ const AddListing = () => {
                     {/* Checkboxes */}
                     <div className="mt-10">
                         <label className="">Check all that apply:</label>
-                        <div className="grid grid-cols-2 gap-y-3 mt-8">
+                        <div className="grid grid-cols-2 gap-y-3 mt-8 max-sm:gap-2">
                             {[
                                 "Takes Reservations", "Full Bar", "Pet Friendly", "Wine & Beer",
                                 "Kid Friendly", "Wheelchair Accessible", "Outdoor Seating",
                                 "Accepts Credit Cards", "Full Bar", "Take-Out", "Delivery", "Wifi"
                             ].map((item, idx) => (
-                                <label key={idx} className="flex items-center space-x-3 cursor-pointer group">
-                                    <input type="checkbox" className="w-10 h-10 border-2 border-[#D9D9D9] bg-transparent rounded-none checked:border-black cursor-pointer accent-color" />
-                                    <span className="text-[20px] tracking-[-8%] font-medium">{item}</span>
+                                <label key={idx} className="flex items-center md:space-x-3 space-x-2 cursor-pointer group">
+                                    <input type="checkbox" className="md:min-w-10 md:min-h-10 min-w-5 min-h-5 border border-black bg-transparent rounded-none checked:border-black cursor-pointer accent-color" />
+                                    <span className="md:text-[20px] text-[16px] tracking-[-8%] font-medium">{item}</span>
                                 </label>
                             ))}
                         </div>
@@ -102,12 +102,12 @@ const AddListing = () => {
 
                     {/* Chef's Notes Section */}
                     <div className="mt-10">
-                        <h2 className="text-4xl font-bold mb-2 tracking-[-8%]"> {`${"Share your Chef's Notes..."}`}</h2>
-                        <p className="text-[20px] mb-4 tracking-[-8%]"> {`${"Don't forget to tell us about..."}`}</p>
+                        <h2 className="md:text-4xl sm:text:3xl text-2xl font-bold mb-2 tracking-[-8%]"> {`${"Share your Chef's Notes..."}`}</h2>
+                        <p className="md:text-[20px] text-[18px] mb-4 tracking-[-8%]"> {`${"Don't forget to tell us about..."}`}</p>
 
-                        <div className="flex gap-2 mb-[18px]">
+                        <div className="flex gap-2 mb-4.5 max-md:flex-wrap">
                             {['your favorite dishes', 'the experience', 'the ambiance'].map((tag) => (
-                                <span key={tag} className="bg-black  py-3 rounded-[6px]  text-center  basis-1/3 text-[20px] font-medium text-[#FFF1E1]">
+                                <span key={tag} className="bg-black  py-3 px-3 rounded-[6px]  text-center  md:basis-1/3 md:text-[20px] sm:text-[16px] text-[14px] font-medium text-[#FFF1E1]">
                                     {tag}
                                 </span>
                             ))}
@@ -117,11 +117,11 @@ const AddListing = () => {
                             <textarea
                                 value={value}
                                 onChange={(e) => setValue(e.target.value)}
-                                className="border border-black h-96 p-4 input-field"
+                                className="border border-black md:h-96 h-44 p-4 input-field"
                             />
 
                             {!value && (
-                                <span className="pointer-events-none absolute bottom-6 left-10 text-[20px] text-black/60">
+                                <span className="pointer-events-none absolute md:bottom-6 md:left-10 bottom-2.5 left-2.5 md:text-[20px] sm:text-[16px] text-[14px] text-black/60">
                                     Positive reviews only. Must be a minimum of 85 characters.
                                 </span>
                             )}
@@ -129,7 +129,7 @@ const AddListing = () => {
                     </div>
 
                     {/* Submit Button */}
-                    <div className="mt-8 flex justify-center">
+                    <div className="md:py-8  py-6 flex justify-center">
                         <button
                             type="submit"
                             className="button button--primary "
@@ -139,7 +139,7 @@ const AddListing = () => {
                     </div>
                 </form>
             </div>
-        </main>
+        </section>
     )
 }
 
