@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Plus } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 
@@ -129,8 +128,8 @@ export default function RestaurantSearch() {
   };
 
   return (
-    <div className="">
-      <div className="min-h-screen bg-[var(--bg)] flex justify-center px-4">
+    <div className="md:pb-44 md:pt-20 py-10">
+      <div className="  flex justify-center items-center px-4">
         <div className="mt-10">
           {/* Header */}
           <div className="text-center mb-10">
@@ -146,10 +145,10 @@ export default function RestaurantSearch() {
 
           {/* Search Box */}
           <div className="relative">
-            <div className="w-full max-w-4xl bg-transparent border-2 border-black rounded-lg p-6 mb-24 flex items-end justify-between gap-4">
+            <div className=" bg-transparent border-3 rounded-[9px] md:py-4 px-4.5 p-4 md:flex items-end justify-between gap-4">
               {/* Left side (Label + Input) */}
-              <div className="flex flex-col w-full">
-                <label className="text-black mb-2">Your Business Name</label>
+              <div className="flex flex-col w-full max-md:mb-6">
+                <label className="text-black! mb-2">Your Business Name</label>
 
                 <Input
                   ref={inputRef}
@@ -172,7 +171,7 @@ export default function RestaurantSearch() {
               <button
                 onClick={handleSearch}
                 disabled={!selectedRestaurant}
-                className="bg-[var(--primary)] hover:bg-[#FF8300] text-black font-black py-3 px-6 rounded-lg transition-all uppercase text-sm w-[183px] h-[69px]"
+                className="button button--primary max-md:w-full"
               >
                 CLAIM
               </button>
@@ -182,11 +181,11 @@ export default function RestaurantSearch() {
             {showDropdown && (
               <div
                 ref={dropdownRef}
-                className="absolute left-0 right-0 top-full mt-1 bg-[var(--primary)] border-2 border-black rounded-xl shadow-lg z-20 max-h-80 overflow-y-auto"
+                className="absolute left-0 right-0 top-full mt-1  border-2 border-black rounded-xl shadow-lg z-20 max-h-80 overflow-y-auto"
               >
                 {/* Add new */}
                 {searchInput.trim() && (
-                  <div className="px-4 py-3 border-b bg-[var(--primary)] flex items-center gap-3">
+                  <div className="px-4 py-3 border-b  flex items-center gap-3">
                     <Plus className="w-5 h-5 body-title" />
                     <Link href="add-listing">
                       <p className="body-title text-sm flex-1">
@@ -202,7 +201,7 @@ export default function RestaurantSearch() {
                   <button
                     key={restaurant.id}
                     onClick={() => handleSelectRestaurant(restaurant)}
-                    className="w-full text-left px-4 py-3 bg-[var(--primary)] flex justify-between items-center"
+                    className="w-full text-left px-4 py-3  flex justify-between items-center"
                   >
                     <div>
                       <p className="body-title font-semibold">

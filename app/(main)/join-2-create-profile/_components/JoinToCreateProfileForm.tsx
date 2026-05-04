@@ -1,7 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import WelcomePopup from '@/components/Wellcompopup'
+
+import Link from 'next/link'
+import WelcomePopup from './WelcomePage'
 
 const JoinToCreateProfileForm = () => {
     const [isSubmitted, setIsSubmitted] = useState(false)
@@ -21,7 +23,7 @@ const JoinToCreateProfileForm = () => {
                     <h1 className="title text-center mb-1.5">
                         Be a <span className="text-[#FF8400]">Cheffington</span>
                     </h1>
-                    <h2 className="md:text-[50px] text-4xl  text-center mb-8 tracking-[-8%]">
+                    <h2 className="subtitle text-center mb-8 ">
                         Create Your Profile
                     </h2>
                 </div>
@@ -32,7 +34,7 @@ const JoinToCreateProfileForm = () => {
                 >
                     {/* Full Name */}
                     <div className="mb-10">
-                        <label className="block mb-2 text-lg font-medium">Full Name</label>
+                        <label className="block mb-2 text-lg font-medium!">Full Name</label>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <input type="text" placeholder="First" className="input-field" />
                             <input type="text" placeholder="Last" className="input-field" />
@@ -56,31 +58,47 @@ const JoinToCreateProfileForm = () => {
 
                     {/* Onsite Password & Verify */}
                     <div className="mb-10">
-                        <label className="block mb-2 text-lg font-medium">Onsite Password</label>
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="password" placeholder="Onsite Password" className="input-field" />
-                            <input type="password" placeholder="Verify Password" className="input-field" />
+                            <div>
+                                <label className="block mb-2 text-lg font-medium!">Create Password</label>
+                                <input type="password" className="input-field" />
+                            </div>
+                            <div>
+                                <label className="block mb-2 text-lg font-medium!">Verify Password</label>
+                                <input type="password" placeholder="" className="input-field" />
+                            </div>
+
+
                         </div>
                     </div>
 
                     {/* Current Restaurant & Website */}
                     <div className="mb-10">
-                        <label className="block mb-2 text-lg font-medium">Current Restaurant</label>
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Current Restaurant" className="input-field" />
-                            <input type="url" placeholder="Website" className="input-field" />
+                            <div>
+                                <label className="block mb-2 text-lg font-medium!">Current Restaurant</label>
+                                <input type="text" placeholder="" className="input-field" />
+                            </div>
+                            <div>
+                                <label className="block mb-2 text-lg font-medium!">Website</label>
+                                <input type="url" placeholder="" className="input-field" />
+                            </div>
+
+
                         </div>
                     </div>
 
                     {/* Job Title */}
                     <div className="mb-10">
-                        <label className="block mb-2 text-lg font-medium">Job Title</label>
-                        <input type="text" placeholder="Job Title" className="input-field" />
+                        <label className="block mb-2 text-lg font-medium!">Job Title</label>
+                        <input type="text" placeholder="" className="input-field" />
                     </div>
 
                     {/* Restaurant Address */}
                     <div className="mb-10">
-                        <label className="block mb-2 text-lg font-medium">Restaurant Address</label>
+                        <label className="block mb-2 text-lg font-medium!">Restaurant Address</label>
                         <div className="space-y-4">
                             <input type="text" placeholder="Address Line 1" className="input-field" />
                             <input type="text" placeholder="Address Line 2" className="input-field" />
@@ -103,28 +121,31 @@ const JoinToCreateProfileForm = () => {
 
                     {/* Qualification Section */}
                     <div className="mb-10">
-                        <p className="text-sm text-gray-600 mb-4">
+                        <p className="md:text-[20px] text-[18px] tracking-[-8%] leading-normal mb-4">
                             To qualify as a Cheffington, you must enter a valid restaurant email (ex. may be submitted from any of our global locations).
                         </p>
                         <div className="mb-4">
-                            <label className="block mb-1 font-medium">Professional email</label>
-                            <input type="email" placeholder="chef@restaurant.com" className="input-field" />
+                            <input type="email" placeholder="Professional email" className="input-field" />
                         </div>
-                        <p className="text-xs text-gray-500 mb-4">Phone optional — restaurant may take up to part of employment</p>
+
+                    </div>
+                    <div className='mb-10'>
+                        <p className="md:text-[20px] text-[18px] tracking-[-8%] leading-normal mb-4">Phone optional — restaurant may take up to part of employment</p>
 
                         {/* File Upload with note */}
-                        <label className="block border-2 border-dashed border-black/50 md:py-20 md:px-12 px-4 py-10 text-center cursor-pointer bg-transparent rounded-lg">
+                        <label className="block border-3 border-dashed border-black/50 md:py-20 md:px-12 px-4 py-10 text-center cursor-pointer bg-transparent rounded-lg">
                             <input type="file" className="hidden" />
-                            <p className="text-[20px] font-normal text-black/50 max-sm:text-[16px]">
+                            <p className="md:text-[20px] text-[18px] font-normal text-black/50 max-sm:text-[16px]">
                                 Drag & Drop Files,{" "}
                                 <span className="underline text-black/50">Choose Files to Upload</span>
                             </p>
                         </label>
-                        <p className="text-xs text-gray-500 mt-2 text-center">Must be dated in the last six months</p>
+                        <p className="md:text-[20px] text-[18px] tracking-[-8%] leading-normal mt-2 mb-4 ">Must be dated in the last six months</p>
                     </div>
 
                     {/* Declaration */}
                     <div className="mb-10">
+                        <div className="text-[20px] leading-normal tracking-[-8%] mb-2 text-lg font-bold">Declaration</div>
                         <label className="flex items-center md:space-x-3 space-x-2 cursor-pointer group">
                             <input type="checkbox" className="md:min-w-10 md:min-h-10 min-w-5 min-h-5 border border-black bg-transparent rounded-none checked:border-black cursor-pointer accent-color" />
                             <span className="md:text-[20px] text-[16px] tracking-[-8%] font-medium">
@@ -136,22 +157,22 @@ const JoinToCreateProfileForm = () => {
                     {/* Signature */}
                     <div className="mb-10">
                         <label className="block mb-2 text-lg font-medium">Signature</label>
-                        <div className="border-2 border-black h-24 rounded-lg bg-gray-50" />
+                        <div className="border border-black h-36  bg-transparent" />
                     </div>
 
                     {/* Terms Checkbox */}
                     <div className="mb-10">
                         <label className="flex items-center md:space-x-3 space-x-2 cursor-pointer group">
                             <input type="checkbox" className="md:min-w-10 md:min-h-10 min-w-5 min-h-5 border border-black bg-transparent rounded-none checked:border-black cursor-pointer accent-color" />
-                            <span className="md:text-[20px] text-[16px] tracking-[-8%] font-medium underline">
-                                I have read and accept the terms and agreement.
+                            <span className="md:text-[20px] text-[16px] tracking-[-8%] font-medium ">
+                                I have read and accept the<span className='underline'><Link href="/terms"> terms and agreement</Link>.</span>
                             </span>
                         </label>
                     </div>
 
                     {/* Part Name */}
                     <div className="mb-8">
-                        <label className="block mb-2 text-lg font-medium">Part Name</label>
+                        <label className="block mb-2 text-lg font-medium!">Print Name</label>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <input type="text" placeholder="First" className="input-field" />
                             <input type="text" placeholder="Last" className="input-field" />

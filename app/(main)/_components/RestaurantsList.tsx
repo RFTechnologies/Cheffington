@@ -5,7 +5,7 @@ const RestaurantsList = () => {
                 <h2 className="title md:text-7xl font-black tracking-tighter mb-4">
                     The Chef’s Kiss
                 </h2>
-                <p className="subtitle md:text-4xl font-bold md:mb-12 mb-8 tracking-tight">
+                <p className="subtitle font-bold md:mb-12 mb-8">
                     Best place for <span className="text-[#FF8400]">Pakistani Food</span>{" "}
                     in <span className="text-[#FF8400]">San Francisco</span>
                 </p>
