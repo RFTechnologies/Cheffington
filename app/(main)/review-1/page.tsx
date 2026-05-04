@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const ReviewForm = () => {
   return (
@@ -10,18 +10,24 @@ const ReviewForm = () => {
         </h1>
         <h2 className="subtitle font-bold mb-4">Start your review</h2>
         <p className="body-subtitle max-w-md mx-auto leading-tight">
-          By continuing, you agree to Cheffington's{' '}
-          <a href="#" className="underline font-semibold">terms</a> and acknowledge our{' '}
-          <a href="#" className="underline font-semibold">Privacy Policy</a>.
+          By continuing, you agree to Cheffington's{" "}
+          <a href="#" className="underline font-semibold">
+            terms
+          </a>{" "}
+          and acknowledge our{" "}
+          <a href="#" className="underline font-semibold">
+            Privacy Policy
+          </a>
+          .
         </p>
       </header>
 
       {/* Main Form Container */}
-      <div className="max-w-2xl mx-auto border-2 border-black rounded-xl p-8 bg-transparent">
+      <div className="max-w-2xl mx-auto border-3 border-black rounded-xl p-8 bg-transparent">
         <section>
           <h3 className="subtitle mb-1">Share your Chef's Notes...</h3>
           <p className="body-text mb-4">Don't forget to tell us about...</p>
-          
+
           {/* Tag Suggestion Buttons */}
           <div className="flex flex-wrap gap-3 mb-6">
             {['your favorite dishes', 'the experience', 'the ambiance'].map((tag) => (
@@ -47,9 +53,13 @@ const ReviewForm = () => {
         {/* Upload Section */}
         <section className="mt-8">
           <p className="body-text mb-2">Upload images or video (optional)</p>
-          <div className="border-2 border-dotted border-gray-400 h-32 flex items-center justify-center bg-transparent">
+          <div className="border-3 border-dotted border-gray-400 h-32 flex items-center justify-center bg-transparent">
             <p className="body-text">
-              Drag & Drop Files, <span className="underline cursor-pointer">Choose Files to Upload</span>
+              Drag & Drop Files,{" "}
+              <label className="underline cursor-pointer">
+                Choose Files to Upload
+                <input type="file" className="hidden" />
+              </label>
             </p>
           </div>
         </section>

@@ -1,12 +1,16 @@
-import React from 'react'
-import CheffingtonHero from "../components/Hero"
-import ChefRecommends from '@/components/ChefRecommends'
+
+import RestaurantsList from './(main)/_components/RestaurantsList'
+import Hero from './(main)/_components/Hero'
+import ChefRecommends from './(main)/_components/ChefRecommends'
+
+
 const page = () => {
   return (
-    <div className='bg-[var(--bg)] w-full'>
-     <CheffingtonHero />
-     <ChefRecommends />
-    </div>
+    <main className='w-full'>
+      <Hero />
+      <RestaurantsList />
+      <ChefRecommends />
+    </main>
   )
 }
 
