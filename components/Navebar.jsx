@@ -17,7 +17,7 @@ export default function Navbar() {
   // console.log(sitedata);
   return (
     <div className="relative">
-      <nav className="sticky  w-full lg:px-8 px-4  flex items-center  lg:py-4 py-2 body-subtitle justify-between">
+      <nav className="sticky top-0 z-50 w-full lg:px-8 px-4 flex items-center lg:py-4 py-2 body-subtitle justify-between">
         <div className="flex items-center gap-1">
           <Link href={"/"} className="flex items-center gap-1">
             <Image
@@ -83,7 +83,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {open && (
-          <div className="absolute top-[100px] left-0 w-full bg-[var(--bg)] p-6 lg:hidden shadow">
+          <div className="absolute top-[100px] left-0 w-full z-50 bg-[var(--bg)] p-6 lg:hidden shadow">
             <ul className="flex flex-col space-y-6 text-lg">
               {navLinks.map((item, index) => (
                 <li key={index}>
