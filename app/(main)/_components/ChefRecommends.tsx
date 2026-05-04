@@ -17,7 +17,7 @@ const ChefRecommends = () => {
         <h2 className="title text-center ">
           Chef Recommends
         </h2>
-        <p className="subtitle md:text-4xl font-medium tracking-tight md:mb-12 mb-8 text-center">
+        <p className="subtitle  md:mb-12 mb-8 text-center">
           No bad reviews. Only great food.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
