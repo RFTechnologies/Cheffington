@@ -86,9 +86,9 @@ export default function RestaurantSearch() {
     if (searchInput.trim() === "") {
       setFilteredRestaurants([]);
       setShowDropdown(false);
-      
+
       return;
-    
+
     }
 
     const filtered = DUMMY_RESTAURANTS.filter((r) =>
@@ -176,7 +176,7 @@ export default function RestaurantSearch() {
               <button
                 onClick={handleSearch}
                 disabled={!selectedRestaurant}
-                 className="bg-[var(--primary)] hover:bg-[#FF8300] text-black font-black py-3 px-6 rounded-lg transition-all uppercase text-sm w-[183px] h-[69px]"
+                className="bg-[var(--primary)] hover:bg-[#FF8300] text-black font-black py-3 px-6 rounded-lg transition-all uppercase text-sm w-[183px] h-[69px]"
               >
                 SEARCH
               </button>
@@ -193,9 +193,9 @@ export default function RestaurantSearch() {
                   <div className="px-4 py-3 border-b bg-[var(--primary)] flex items-center gap-3">
                     <Plus className="w-5 h-5 body-title" />
                     <Link href='add-listing'>
-                    <p className="body-title text-sm flex-1">
-                      Don&apos;t see your establishment? Add an estabilshment with this name
-                    </p>
+                      <p className="body-title text-sm flex-1">
+                        Don&apos;t see your establishment? Add an estabilshment with this name
+                      </p>
                     </Link>
                   </div>
                 )}
@@ -209,12 +209,12 @@ export default function RestaurantSearch() {
                   >
                     <div>
                       <Link href="review-1">
-                      <p className="body-title font-semibold">
-                        {restaurant.name}
-                      </p>
-                      <p className="body-title text-sm">
-                        {restaurant.city}, {restaurant.state}
-                      </p>
+                        <p className="body-title font-semibold">
+                          {restaurant.name}
+                        </p>
+                        <p className="body-title text-sm">
+                          {restaurant.city}, {restaurant.state}
+                        </p>
                       </Link>
                     </div>
                   </button>

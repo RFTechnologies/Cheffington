@@ -6,7 +6,18 @@ export const sitedata = {
   social: [
     {
       name: "Facebook",
-      url: "https://www.facebook.com/cheffington",
+      link: "https://www.facebook.com/cheffington",
+      icon: "FaInstagram",
+    },
+    {
+      name: "Twitter",
+      link: "https://www.twitter.com/cheffington",
+      icon: "FaTwitter",
+    },
+    {
+      name: "FaLinkedin",
+      link: "https://www.linkedin.com/company/cheffington",
+      icon: "FaLinkedin",
     },
   ],
 };
