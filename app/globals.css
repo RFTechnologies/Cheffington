@@ -21,9 +21,7 @@
     --radius: 0.5rem;
  
 }
-body {
-  @apply font-helvetica;
-}
+
 /*  bg-[var(--primary)]  
     bg-[var(--bg)]
     bg-[var(--secondary)]
