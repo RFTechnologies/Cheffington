@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export default function SignInPage() {
@@ -45,21 +46,23 @@ export default function SignInPage() {
           </div>
 
           {/* Sign In Button */}
+          <Link href="/claim-a-restaurant-3">
           <button
             type="submit"
             className="w-full py-4 bg-[#FF8400] text-black font-bold uppercase tracking-widest rounded shadow-md hover:bg-[#e67700] transition-colors"
           >
             SIGN IN
           </button>
+          </Link>
 
           {/* Footer Links */}
           <div className="flex justify-between text-sm mt-4">
             <p className="text-black">
-              Not a member? <a href="#" className="underline font-semibold">Sign up here.</a>
+              Not a member? <Link href="join-2-create-profile" className="underline font-semibold">Sign up here.</Link>
             </p>
-            <a href="#" className="text-black underline font-semibold">
+            <Link href="#" className="text-black underline font-semibold">
               Forgot password?
-            </a>
+            </Link>
           </div>
         </form>
 
@@ -78,8 +81,7 @@ export default function SignInPage() {
               className="w-32 h-32 object-contain"
                
             />
-            {/* If you don't have the image yet, this represents
-             */}
+            
           </div>
         </div>
       </div>
