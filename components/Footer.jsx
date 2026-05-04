@@ -1,3 +1,4 @@
+import { sitedata } from "@/data/site";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -17,7 +18,7 @@ const Footer = () => {
         <div className="">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
             {/* Left Section: Branding & Newsletter */}
-            <div className="flex flex-col space-y-6  ">
+            <div className="flex flex-col space-y-6 md:basis-1/2 basis-full max-md:w-full">
               {/* Logo & Brand Name */}
               <div className="flex items-center">
                 <div className="relative">
@@ -66,20 +67,22 @@ const Footer = () => {
                     </a>
                   </li>
                 ))}
+                <li className="flex gap-4 mt-4 text-xl mr-6">
+                  {sitedata?.social?.map((item, index) => (
+                    <a
+                      key={index}
+                      href={item.url}
+                      className="hover:text-[#FF8400] transition-colors cursor-pointer"
+                    >
+                      {item.icon === "FaInstagram" && <FaInstagram size={24} />}
+                      {item.icon === "FaLinkedin" && <FaLinkedin size={24} />}
+                      {item.icon === "FaTwitter" && <FaTwitter size={24} />}
+                    </a>
+                  ))}
+                </li>
               </ul>
 
               {/* Social Icons */}
-              <div className="flex gap-4 mt-4 text-xl mr-6">
-                <a href="#" className="hover:text-[#FF8400] transition-colors">
-                  <FaInstagram size={24} />
-                </a>
-                <a href="#" className="hover:text-[#FF8400] transition-colors">
-                  <FaLinkedin size={24} />
-                </a>
-                <a href="#" className="hover:text-[#FF8400] transition-colors">
-                  <FaTwitter size={24} />
-                </a>
-              </div>
             </div>
           </div>
         </div>

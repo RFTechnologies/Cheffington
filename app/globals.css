@@ -2,6 +2,16 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+@layer components {
+  .input-field {
+    @apply w-full border-b border-gray-400 py-2 outline-none bg-transparent;
+  }
+
+  .input-field:focus {
+    @apply ring-1 ring-black pl-2.5 text-[20px] transition-all duration-300 ease-in-out border-0;
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -57,6 +67,7 @@
 
 body {
   background-color: var(--bg);
+  font-family: var(--font-helvetica);
 }
 .page-width {
   max-width: 1160px;
@@ -71,6 +82,14 @@ body {
 ::selection {
   background-color: var(--primary);
   color: var(--bg);
+}
+::placeholder {
+  font-weight: regular;
+  font-size: 20px;
+  color: #000000;
+}
+input:not([type="checkbox"]) {
+  min-height: 60px;
 }
 .button {
   font-family: var(--font-helvetica);
@@ -87,6 +106,7 @@ body {
   transition: all 400ms ease-in-out;
   cursor: pointer;
 }
+
 .button:hover {
   background-color: var(--primary-dark);
 }
@@ -95,50 +115,49 @@ body {
   color: var(--bg-black);
 }
 
-/* TITLE */
 .title {
-  font-family: var(--font-helvetica);
-  font-weight: 700;
+  font-weight: bold;
   font-size: 100px;
   letter-spacing: -6%;
   line-height: 100%;
 }
-
-/* SUBTITLE */
 .subtitle {
-  font-family: var(--font-helvetica);
   font-weight: 400;
   font-size: 50px;
   letter-spacing: -8%;
   line-height: 100%;
 }
 
-/* BODY TITLE */
 .body-title {
-  font-family: var(--font-helvetica);
   font-weight: 700;
   font-size: 20px;
   letter-spacing: -0.06em;
   text-transform: uppercase;
 }
 
-/* BODY SUBTITLE */
 .body-subtitle {
-  font-family: var(--font-helvetica);
   font-weight: 700;
   font-size: 20px;
   letter-spacing: -0.06em;
 }
 
-/* BODY TEXT */
 .body-text {
-  font-family: var(--font-helvetica);
   font-weight: 400;
   font-size: 20px;
   letter-spacing: -0.06em;
   line-height: 21px;
 }
-
+.text-40 {
+  font-size: 40px;
+  line-height: normal;
+  letter-spacing: -8%;
+}
+label {
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: -8%;
+  line-height: normal;
+}
 @media (max-width: 768px) {
   .title {
     font-size: 46px;
@@ -162,12 +181,18 @@ body {
     letter-spacing: -0.04em;
     line-height: 18px;
   }
+  .text-40 {
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 525px) {
   .page-width,
   .page-width-narrow {
     padding-inline: 15px;
+  }
+  .text-40 {
+    font-size: 24px;
   }
 }
 @layer base {
