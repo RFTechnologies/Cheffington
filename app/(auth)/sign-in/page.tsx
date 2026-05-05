@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
 
 export default function SignInPage() {
   return (
@@ -47,12 +46,12 @@ export default function SignInPage() {
 
           {/* Sign In Button */}
           <Link href="/claim-a-restaurant-3">
-          <button
-            type="submit"
-            className="w-full py-4 bg-[#FF8400] text-black font-bold uppercase tracking-widest rounded shadow-md hover:bg-[#e67700] transition-colors"
-          >
-            SIGN IN
-          </button>
+            <button
+              type="submit"
+              className="w-full py-4 bg-[#FF8400] text-black font-bold uppercase tracking-widest rounded shadow-md hover:bg-[#e67700] transition-colors"
+            >
+              SIGN IN
+            </button>
           </Link>
 
           {/* Footer Links */}
@@ -71,17 +70,17 @@ export default function SignInPage() {
           <h2 className="body-subtitle">
             Cheffington
           </h2>
-          
+
           {/* Mascot Placeholder */}
           <div className="absolute -right-4 -bottom-4 md:-right-20">
             {/* Replace src with your chicken mascot image */}
-            <img 
-              src="/signlogo.png" 
-              alt="Cheffington Mascot" 
+            <img
+              src="/signlogo.png"
+              alt="Cheffington Mascot"
               className="w-32 h-32 object-contain"
-               
+
             />
-            
+
           </div>
         </div>
       </div>

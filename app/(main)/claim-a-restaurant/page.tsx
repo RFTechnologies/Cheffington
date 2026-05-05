@@ -138,7 +138,7 @@ export default function RestaurantSearch() {
               <span className="text-black">Your </span>
               <span className="text-[#FF8400]">Business</span>
             </h1>
-            <p className="subtitle mt-8 text-black">
+            <p className="subtitle mt-3 text-black">
               Search or Add Your Business Name
             </p>
           </div>
@@ -171,7 +171,8 @@ export default function RestaurantSearch() {
               <button
                 onClick={handleSearch}
                 disabled={!selectedRestaurant}
-                className="button button--primary max-md:w-full"
+                className="button button--primary max-md:w-full
+                "
               >
                 CLAIM
               </button>
