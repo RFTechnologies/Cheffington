@@ -171,7 +171,7 @@ export default function RestaurantSearch() {
               >
                 SEARCH
               </button>
-            </div>
+            </div> 
 
             {/* Dropdown */}
             {showDropdown && (
