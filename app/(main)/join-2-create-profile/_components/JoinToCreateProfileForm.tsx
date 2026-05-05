@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-
 import Link from 'next/link'
 import WelcomePopup from './WelcomePage'
 
@@ -133,7 +132,7 @@ const JoinToCreateProfileForm = () => {
                         <p className="md:text-[20px] text-[18px] tracking-[-8%] leading-normal mb-4">Phone optional — restaurant may take up to part of employment</p>
 
                         {/* File Upload with note */}
-                        <label className="block border-3 border-dashed border-black/50 md:py-20 md:px-12 px-4 py-10 text-center cursor-pointer bg-transparent rounded-lg">
+                        <label className="block border-1 border-dashed border-black/50 md:py-20 md:px-12 px-4 py-10 text-center cursor-pointer bg-transparent rounded-lg">
                             <input type="file" className="hidden" />
                             <p className="md:text-[20px] text-[18px] font-normal text-black/50 max-sm:text-[16px]">
                                 Drag & Drop Files,{" "}

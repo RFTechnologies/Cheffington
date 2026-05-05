@@ -1,7 +1,6 @@
-'use client';
-import React, { useState } from 'react';
+'use client'
+import React, { useState } from 'react'
 
-// 1. Move interface outside so it's clean and reusable
 interface RestaurantForm {
   restaurantName: string;
   cuisine: string;
@@ -15,11 +14,10 @@ interface RestaurantForm {
   zipCode: string;
   country: string;
   description: string;
-  features: string[]; 
+  features: string[];
 }
 
 const MasterpieceForm = () => {
-  // 2. INITIALIZE STATE (This was the missing piece causing your error)
   const [formData, setFormData] = useState<RestaurantForm>({
     restaurantName: '',
     cuisine: '',
@@ -33,17 +31,16 @@ const MasterpieceForm = () => {
     zipCode: '',
     country: '',
     description: '',
-    features: [] 
+    features: []
   });
 
   const amenities = [
-    "Takes Reservations", "Pet Friendly", "Kid Friendly", 
+    "Takes Reservations", "Pet Friendly", "Kid Friendly",
     "Outdoor Seating", "Full Bar", "Delivery",
     "Wine & Beer", "Wheelchair Accessible",
     "Accepts Credit Cards", "Take-Out", "Wifi"
   ];
 
-  // 3. Properly type your handlers instead of using 'any'
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -54,8 +51,8 @@ const MasterpieceForm = () => {
       const isSelected = prev.features.includes(item);
       return {
         ...prev,
-        features: isSelected 
-          ? prev.features.filter(f => f !== item) 
+        features: isSelected
+          ? prev.features.filter(f => f !== item)
           : [...prev.features, item]
       };
     });
@@ -63,137 +60,175 @@ const MasterpieceForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form Submitted Successfully:", formData);
-    alert("Check the console to see your data!");
+    console.log(formData);
   };
 
   return (
-    <div className="min-h-screen bg-[var(--bg)] flex flex-col items-center py-12 px-4  text-black">
-      <header className="text-center mb-10">
-        <h1 className="title md:text-6xl font-black tracking-tighter leading-none mb-2">
-          Perfect Your <span className="text-[#FF8400]">Masterpiece</span>
-        </h1>
-        <p className="subtitle font-medium tracking-tight">You may edit and/or add details below.</p>
-      </header>
+    <section className="md:pb-44 md:pt-20 py-10">
+      <div className="page-width">
 
-      <div className="w-full max-w-3xl border border-black p-8 md:p-12 bg-transparent relative">
-        <form onSubmit={handleSubmit} className="space-y-6">
-          
-          <div className="space-y-1">
-            <label className="body-text font-black uppercase">Restaurant Name</label>
-            <input 
+        {/* Title */}
+        <div className="mb-12 text-center">
+          <h1 className="title mb-2">
+            Perfect Your <span className="text-[#FF8400]">Masterpiece</span>
+          </h1>
+          <p className="subtitle">You may edit and/or add details below.</p>
+        </div>
+
+        {/* Form */}
+        <form
+          onSubmit={handleSubmit}
+          className="border-3 rounded-[9px] border-black md:px-10! md:py-12! py-8! px-4! page-width-narrow"
+        >
+
+          {/* Restaurant Name */}
+          <div className="mb-10">
+            <label className="block mb-2 text-lg font-medium">Restaurant Name</label>
+            <input
               name="restaurantName"
               value={formData.restaurantName}
               onChange={handleInputChange}
-              type="text" 
-              className="w-full bg-transparent border-b border-black focus:outline-none py-1" 
+              type="text"
+              className="input-field placeholder:font-bold focus:placeholder:font-medium placeholder:text-black! focus:placeholder:text-black"
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-1">
-              <input 
+          {/* Cuisine + Phone */}
+          <div className="mb-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              {/* <label className="block mb-2 text-lg font-medium">Cuisine</label> */}
+              <input
                 name="cuisine"
                 value={formData.cuisine}
                 onChange={handleInputChange}
-                type="text" 
-                placeholder="Cuisine" 
-                className="w-full bg-transparent border border-black p-3 focus:outline-none" 
+                type="text"
+                placeholder='Cuisine'
+                className="input-field placeholder:font-bold focus:placeholder:font-medium placeholder:text-black! focus:placeholder:text-black"
               />
             </div>
-            <div className="space-y-1">
-              <input 
+            <div>
+              {/* <label className="block mb-2 text-lg font-medium">Phone</label> */}
+              <input
                 name="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
-                type="text" 
-                placeholder="(555) 555-5555" 
-                className="w-full bg-transparent border-b border-black py-1 focus:outline-none mt-4" 
+                type="text"
+                placeholder='(555) 555-5555'
+                className="input-field placeholder:font-bold focus:placeholder:font-medium placeholder:text-black! focus:placeholder:text-black"
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-1">
-              <label className="text-[10px] font-black uppercase">Website URL</label>
-              <input name="websiteUrl" value={formData.websiteUrl} onChange={handleInputChange} type="text" className="w-full bg-transparent border-b border-black py-1 focus:outline-none" />
+          {/* Website + Menu */}
+          <div className="mb-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              {/* <label className="block mb-2 text-lg font-medium">Website URL</label> */}
+              <input
+                name="websiteUrl"
+                value={formData.websiteUrl}
+                onChange={handleInputChange}
+                type="text"
+                placeholder='Website URL'
+                className="input-field placeholder:font-bold focus:placeholder:font-medium placeholder:text-black! focus:placeholder:text-black"
+              />
             </div>
-            <div className="space-y-1">
-              <label className="text-[10px] font-black uppercase">Link to Menu</label>
-              <input name="linkToMenu" value={formData.linkToMenu} onChange={handleInputChange} type="text" className="w-full bg-transparent border-b border-black py-1 focus:outline-none" />
-            </div>
-          </div>
-
-          <div className="space-y-6">
-            <div className="space-y-1">
-              <label className="text-[10px] font-black uppercase">Restaurant Address</label>
-              <input name="addressLine1" value={formData.addressLine1} onChange={handleInputChange} type="text" placeholder="Address Line 1" className="w-full bg-transparent border-b border-black py-1 focus:outline-none" />
-            </div>
-            <input name="addressLine2" value={formData.addressLine2} onChange={handleInputChange} type="text" placeholder="Address Line 2" className="w-full bg-transparent border-b border-black py-1 focus:outline-none" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-1">
-              <label className="text-[10px] font-black uppercase">City</label>
-              <input name="city" value={formData.city} onChange={handleInputChange} type="text" className="w-full bg-transparent border-b border-black py-1 focus:outline-none" />
-            </div>
-            <div className="space-y-1">
-              <label className="text-[10px] font-black uppercase">State</label>
-              <input name="state" value={formData.state} onChange={handleInputChange} type="text" className="w-full bg-transparent border-b border-black py-1 focus:outline-none" />
+            <div>
+              {/* <label className="block mb-2 text-lg font-medium">Menu Link</label> */}
+              <input
+                name="linkToMenu"
+                value={formData.linkToMenu}
+                onChange={handleInputChange}
+                type="text"
+                placeholder='Menu Link'
+                className="input-field placeholder:font-bold focus:placeholder:font-medium placeholder:text-black! focus:placeholder:text-black"
+              />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-1">
-              <label className="text-[10px] font-black uppercase">Zip Code</label>
-              <input name="zipCode" value={formData.zipCode} onChange={handleInputChange} type="text" className="w-full bg-transparent border-b border-black py-1 focus:outline-none" />
-            </div>
-            <div className="pt-4">
-              <input name="country" value={formData.country} onChange={handleInputChange} type="text" placeholder="Country" className="w-full bg-transparent border border-black p-3 focus:outline-none" />
+          {/* Address */}
+          <div className="mb-10">
+            <label className="block mb-2 text-lg font-medium">Restaurant Address</label>
+            <div className="space-y-4">
+              <input
+                name="addressLine1"
+                value={formData.addressLine1}
+                onChange={handleInputChange}
+                placeholder="Address Line 1"
+                className="input-field"
+              />
+              <input
+                name="addressLine2"
+                value={formData.addressLine2}
+                onChange={handleInputChange}
+                placeholder="Address Line 2"
+                className="input-field"
+              />
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input name="city" value={formData.city} onChange={handleInputChange} placeholder="City" className="input-field" />
+                <input name="state" value={formData.state} onChange={handleInputChange} placeholder="State" className="input-field" />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input name="zipCode" value={formData.zipCode} onChange={handleInputChange} placeholder="Zip Code" className="input-field" />
+                <input name="country" value={formData.country} onChange={handleInputChange} placeholder="Country" className="input-field" />
+              </div>
             </div>
           </div>
+          <div className='mb-10'>
+            <p className="md:text-[20px] text-[18px] tracking-[-8%] leading-normal mb-4">Upload Logo  or Featured Image (optional)</p>
 
-          <div className="pt-4">
-            <label className="text-[10px] font-black uppercase block mb-4">Check all that apply:</label>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-12">
+            {/* File Upload with note */}
+            <label className="block border-1 border-dashed border-black/50 md:py-20 md:px-12 px-4 py-10 text-center cursor-pointer bg-transparent rounded-lg">
+              <input type="file" className="hidden" />
+              <p className="md:text-[20px] text-[18px] font-normal text-black/50 max-sm:text-[16px]">
+                Drag & Drop Files,{" "}
+                <span className="underline text-black/50">Choose Files to Upload</span>
+              </p>
+            </label>
+          </div>
+
+          {/* Amenities */}
+          <div className="mb-10">
+            <label className="block mb-4 text-lg font-medium">Check all that apply:</label>
+
+            <div className="grid grid-cols-2 gap-y-3 mt-8 max-sm:gap-2">
               {amenities.map((item, idx) => (
-                <div 
-                  key={idx} 
-                  className="flex items-center gap-3 cursor-pointer group"
-                  onClick={() => handleCheckboxChange(item)}
-                >
-                  <div className={`w-6 h-6 border border-black transition-colors flex items-center justify-center ${formData.features.includes(item) ? 'bg-black' : 'bg-white'}`}>
-                    {formData.features.includes(item) && <span className="text-white text-xs">✓</span>}
-                  </div>
-                  <span className="text-[11px] font-bold uppercase group-hover:text-gray-600 transition-colors">{item}</span>
-                </div>
+                <label key={idx} className="flex items-center md:space-x-3 space-x-2 cursor-pointer group ">
+                  <input
+                    type="checkbox"
+                    checked={formData.features.includes(item)}
+                    onChange={() => handleCheckboxChange(item)}
+                    className="md:min-w-10 md:min-h-10 min-w-5 min-h-5 border border-black bg-transparent rounded-none checked:border-black cursor-pointer accent-color"
+                  />
+                  <span className="md:text-[20px] text-[16px] tracking-[-8%] font-medium">{item}</span>
+                </label>
               ))}
             </div>
           </div>
 
-          <div className="space-y-2 pt-4">
-            <label className="text-[10px] font-black uppercase">Write Brief Description</label>
-            <textarea 
+          {/* Description */}
+          <div className="mb-10">
+            <label className="block mb-2 text-lg font-medium">Write Brief Description</label>
+            <textarea
               name="description"
               value={formData.description}
               onChange={handleInputChange}
-              className="w-full bg-transparent border border-black h-32 focus:outline-none p-2" 
+              className="border border-black md:h-80 h-44 p-4 input-field"
             />
           </div>
 
-          <div className="flex justify-center pt-6">
-            <button 
-              type="submit"
-              className="bg-[#FF8400] text-black font-black px-16 py-4 rounded-lg transition-all tracking-tighter uppercase"
-            >
-              Complete
+          {/* Submit */}
+          <div className="flex justify-center">
+            <button type="submit" className="button button--primary">
+              COMPLETE
             </button>
           </div>
+
         </form>
       </div>
-    </div>
-  );
-};
+    </section>
+  )
+}
 
-export default MasterpieceForm;
-
+export default MasterpieceForm

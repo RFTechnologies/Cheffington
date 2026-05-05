@@ -88,14 +88,47 @@ body {
 ::placeholder {
   font-weight: regular;
   font-size: 20px;
-  color: rgba(0, 0, 0, 0.6) !important;
+  color: #00000099 !important;
 }
+input:-internal-autofill-selected {
+  background-color: transparent !important;
+  background-image: none !important;
+  color: inherit !important;
+}
+
 input:not([type="checkbox"]) {
   min-height: 60px;
 }
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 1px solid #000;
+
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  border-color: #ff8400;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: #ff8400;
+  font-size: 25px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+}
 .button {
   font-family: var(--font-helvetica);
-  font-weight: 700;
+  font-weight: bold;
   font-size: 20px;
   letter-spacing: -0.06em;
   text-transform: uppercase;
@@ -219,6 +252,15 @@ label {
   .body-text {
     font-size: 18px;
     line-height: 18px;
+  }
+
+  input[type="checkbox"]:checked::after {
+    font-size: 15px;
+  }
+  .button {
+    font-size: 18px;
+
+    padding: 14px 30px;
   }
 }
 @layer base {
