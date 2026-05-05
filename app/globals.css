@@ -128,7 +128,7 @@ input[type="checkbox"]:checked::after {
 }
 .button {
   font-family: var(--font-helvetica);
-  font-weight: 700;
+  font-weight: bold;
   font-size: 20px;
   letter-spacing: -0.06em;
   text-transform: uppercase;
@@ -256,6 +256,11 @@ label {
 
   input[type="checkbox"]:checked::after {
     font-size: 15px;
+  }
+  .button {
+    font-size: 18px;
+
+    padding: 14px 30px;
   }
 }
 @layer base {

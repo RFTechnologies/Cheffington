@@ -2,10 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Plus } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import { redirect } from "next/dist/server/api-utils";
 
 const DUMMY_RESTAURANTS = [
   {
@@ -153,16 +151,15 @@ export default function RestaurantSearch() {
           <div className="relative">
             <div className=" bg-transparent border-3 rounded-[9px] md:py-4 px-4.5 p-4 md:flex items-end justify-between gap-4">
               {/* Left side (Label + Input) */}
-              <div className="flex flex-col w-full max-md:mb-6">
-                <label className="body-text mb-2">Business Name</label>
-
+              <div className="flex flex-col w-full max-md:mb-6 relative">
+                <label className="body-text mb-2 absolute -top-3">Business Name</label>
                 <Input
                   ref={inputRef}
                   type="text"
                   placeholder=""
                   value={searchInput}
                   onChange={(e) => setSearchInput(e.target.value)}
-                  className="bg-transparent border-0 border-b border-black rounded-none px-0 text-black focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-black"
+                  className="bg-transparent text-xl!  border-b border-black rounded-none px-0 text-black focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-black"
                 />
               </div>
 
@@ -170,7 +167,7 @@ export default function RestaurantSearch() {
               <button
                 onClick={handleSearch}
                 disabled={!selectedRestaurant}
-                className="button button--primary max-md:w-full"
+                className="button button--primary max-md:w-full px-8.75! py-5.75!"
               >
                 SEARCH
               </button>
