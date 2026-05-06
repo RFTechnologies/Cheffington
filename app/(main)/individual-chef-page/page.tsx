@@ -74,12 +74,12 @@ export default function ChefProfile() {
             </div>
 
             {/* REVIEWS */}
-            <div className="border-2 border-black rounded-3xl p-4 md:p-8 space-y-8">
+           <div className="border-2 border-black rounded-3xl p-4 md:p-8 space-y-8">
 
               {[1, 2, 3, 4, 5].map((i) => (
                 <ReviewItem key={i} />
               ))}
-
+ 
             </div>
 
           </div>
