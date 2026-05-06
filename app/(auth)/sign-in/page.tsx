@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function SignInPage() {
   return (
-    <div className="min-h-screen bg-[var(--bg)] flex flex-col items-center justify-center p-4 font-sans">
+    <div className="min-h-screen  flex flex-col items-center justify-center p-4 font-sans">
       <div className="w-full max-w-2xl">
         {/* Title */}
         <h1 className="title font-bold text-center mb-10 text-black tracking-tight">
@@ -48,7 +48,7 @@ export default function SignInPage() {
           <Link href="/claim-a-restaurant-3">
             <button
               type="submit"
-              className="w-full py-4 bg-[#FF8400] text-black font-bold uppercase tracking-widest rounded shadow-md hover:bg-[#e67700] transition-colors"
+              className="w-full button button-primary"
             >
               SIGN IN
             </button>
