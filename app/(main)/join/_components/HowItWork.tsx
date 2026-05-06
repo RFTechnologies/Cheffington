@@ -1,6 +1,4 @@
-import Link from 'next/link';
-import React from 'react'
-
+import Button from '@/components/Button';
 const HowItWork = () => {
 
     const steps = [
@@ -52,7 +50,7 @@ const HowItWork = () => {
                         </div>
                         {step.link ? (
                             <a
-                                href="#"
+                                href="/join-2-create-profile"
                                 className=" md:text-[33px] text-xl  text-black group-hover:text-[#FF8400] transition-colors underline decoration-black/10 decoration-2 underline-offset-4 group-hover:decoration-[#FF8400]"
                             >
                                 {step.text}
@@ -66,12 +64,8 @@ const HowItWork = () => {
                 ))}
             </div>
 
-            <div className="relative inline-block mt-8 md:mt-12 group">
-                <Link href="join-2-create-profile">
-                    <button className="button button--primary ">
-                        Get Started
-                    </button>
-                </Link>
+            <div className=" mt-8 md:mt-12 ">
+                <Button title="Get Started" href='/join-2-create-profile' />
             </div>
         </section>
     )

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import WelcomePopup from './WelcomePage'
+import Button from '@/components/Button'
 
 const JoinToCreateProfileForm = () => {
     const [isSubmitted, setIsSubmitted] = useState(false)
@@ -180,12 +181,7 @@ const JoinToCreateProfileForm = () => {
 
                     {/* Submit Button */}
                     <div className="md:py-8 py-6 flex justify-center">
-                        <button
-                            type="submit"
-                            className="button button--primary"
-                        >
-                            CREATE PROFILE
-                        </button>
+                        <Button type='submit' title='CREATE PROFILE' />
                     </div>
                 </form>
             </div>

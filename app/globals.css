@@ -21,6 +21,7 @@
   --radius: 6px;
   --bg-black: #000000;
   --primary-dark: hsl(34, 100%, 55%);
+  --font-helvetica: Helvetica, Arial, sans-serif;
 }
 @theme inline {
   --color-background: var(--background);
@@ -78,7 +79,7 @@
 
 body {
   background-color: var(--bg);
-  font-family: var(--font-helvetica);
+  font-family: var(--font-helvetica) !important;
 }
 
 ::selection {
@@ -140,7 +141,9 @@ input[type="checkbox"]:checked::after {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   transition: all 400ms ease-in-out;
   cursor: pointer;
+  display: block;
   min-width: 197px;
+  min-height: 69px !important;
 }
 
 .button:hover {
@@ -219,6 +222,9 @@ label {
   .text-40 {
     font-size: 30px;
   }
+  .button {
+    min-height: 50px;
+  }
 }
 
 @media (max-width: 525px) {
@@ -260,7 +266,7 @@ label {
   }
   .button {
     font-size: 18px;
-
+    min-height: 48px;
     padding: 14px 30px;
   }
 }

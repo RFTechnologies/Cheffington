@@ -1,8 +1,8 @@
 import { sitedata } from "@/data/site";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import Button from "./Button";
 
 const footerLinks = [
   { name: "Claim Your Business", url: "/claim-a-restaurant" },
@@ -45,12 +45,7 @@ const Footer = () => {
                     type="email"
                     className="bg-gray-300 text-black px-4 py-3 rounded-sm w-full focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
-                  <button
-                    type="submit"
-                    className="button button--primary text-nowrap"
-                  >
-                    Sign Up
-                  </button>
+                  <Button title="Sign Up" type="submit" />
                 </form>
               </div>
             </div>

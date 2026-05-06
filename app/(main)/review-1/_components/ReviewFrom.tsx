@@ -1,3 +1,4 @@
+import Button from '@/components/Button'
 import React from 'react'
 
 const ReviewFrom = () => {
@@ -46,9 +47,8 @@ const ReviewFrom = () => {
 
             {/* Submit Section */}
             <div className="mt-10 flex justify-center relative">
-                <button className="button button--primary">
-                    Share
-                </button>
+            
+                <Button title='Share' />
 
             </div>
         </div>

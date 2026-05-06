@@ -1,3 +1,4 @@
+import Button from "@/components/Button"
 
 
 const Search = () => {
@@ -25,9 +26,10 @@ const Search = () => {
                             <input type="body-text" className="bg-transparent border-b border-black/30 focus:border-black outline-none pb-1" />
                         </div>
                         <div className="relative">
-                            <button className="button button--primary">
+                            {/* <button className="button button--primary">
                                 {`Let's Eat`}
-                            </button>
+                            </button> */}
+                            <Button title="Let's Eat" />
 
                         </div>
                     </div>

@@ -1,4 +1,5 @@
 'use client'
+import Button from '@/components/Button';
 import { useState } from 'react'
 
 const AddListing = () => {
@@ -111,12 +112,7 @@ const AddListing = () => {
                     </div>
                     {/* Submit Button */}
                     <div className="md:py-8  py-6 flex justify-center">
-                        <button
-                            type="submit"
-                            className="button button--primary "
-                        >
-                            post review
-                        </button>
+                        <Button title="Post Review" type='submit' />
                     </div>
                 </form>
             </div>

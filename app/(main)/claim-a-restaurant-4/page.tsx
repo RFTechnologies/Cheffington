@@ -1,4 +1,5 @@
 'use client'
+import Button from '@/components/Button';
 import React, { useState } from 'react'
 
 interface RestaurantForm {
@@ -220,9 +221,8 @@ const MasterpieceForm = () => {
 
           {/* Submit */}
           <div className="flex justify-center">
-            <button type="submit" className="button button--primary">
-              COMPLETE
-            </button>
+
+            <Button title='Complete' type='submit' />
           </div>
 
         </form>

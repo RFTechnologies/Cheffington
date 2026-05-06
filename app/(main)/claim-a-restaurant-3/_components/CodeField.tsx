@@ -1,4 +1,5 @@
 'use client'
+import Button from "@/components/Button";
 import { redirect } from "next/navigation";
 
 const CodeField = () => {
@@ -8,7 +9,6 @@ const CodeField = () => {
     }
     return (
         <div className="">
-
             {/* Email Verification */}
             <section>
                 <label className="text-2xl font-bold mb-6 block tracking[-8%] leading-1">
@@ -19,25 +19,24 @@ const CodeField = () => {
                     <input
                         type="email"
                         placeholder="Work Email"
-                        className="input-field min-h-22.25 md:h-22.25 border! bg-[#EFEFEF]! placeholder:pl-4!"
+                        className="input-field h-17.25 border! bg-[#EFEFEF]! placeholder:pl-4!"
                     />
 
-                    <button className="button button--primary md:px-16! md:h-22.25! ">
-                        SEND
-                    </button>
+                    <Button title="Send" />
                 </div>
             </section>
-
             {/* Phone Verification */}
             <section className='my-18'>
                 <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 md:gap-6">
                     <label className="text-2xl font-bold block tracking[-8%] leading-1">
                         Receive a code at *restaurant phone number
                     </label>
-
-                    <button className="button button--primary md:px-16! md:h-22.25! ">
+                    {/* 
+                    <button className="button button--primary  ">
                         SEND
-                    </button>
+                    </button> */}
+                    <Button title="Send" className="" onClick={handleClick} />
+
                 </div>
             </section>
 
@@ -50,12 +49,9 @@ const CodeField = () => {
                 <div className="flex flex-col md:flex-row gap-3 md:gap-4 items-stretch md:items-center">
                     <input
                         type="text"
-                        className="input-field min-h-22.25 md:h-22.25 border! bg-[#EFEFEF]! placeholder:pl-4!"
+                        className="input-field md:h-[69px]  h-[69px] border! bg-[#EFEFEF]! placeholder:pl-4!"
                     />
-
-                    <button className="button button--primary md:px-16! md:h-22.25!  bg-black! text-white!" onClick={handleClick}>
-                        Claim
-                    </button>
+                    <Button title="Claim" className="   bg-black! text-white!" onClick={handleClick} />
 
                 </div>
             </section>
