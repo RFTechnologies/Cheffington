@@ -1,5 +1,6 @@
 'use client'
 import Button from "@/components/Button";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 const CodeField = () => {
@@ -9,7 +10,6 @@ const CodeField = () => {
     }
     return (
         <div className="">
-            {/* Email Verification */}
             <section>
                 <label className="text-2xl font-bold mb-6 block tracking[-8%] leading-1">
                     Receive a code at @restaurantname.com
@@ -55,6 +55,7 @@ const CodeField = () => {
 
                 </div>
             </section>
+            <p className="text-[20px] mt-20 text-center tracking-[-8%] leading-normal">Need assistance? <span> <Link href={'#'} className="underline"> Contact us. </Link></span></p>
         </div>
     )
 }

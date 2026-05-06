@@ -1,3 +1,4 @@
+import Button from "@/components/Button";
 import Image from "next/image";
 
 const Hero = () => {
@@ -43,9 +44,8 @@ const Hero = () => {
                 className="bg-transparent border-b focus:border-black outline-none pb-1"
               />
             </div>
-            <button className="bg-[#FF8300] hover:bg-[#FF8300]  py-6 px-8  rounded-lg transition-all uppercase font-bold">
-              {`Let's Eat`}
-            </button>
+
+            <Button title="Let's Eat" />
           </div>
         </div>
       </div>
