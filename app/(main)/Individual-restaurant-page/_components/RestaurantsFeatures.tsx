@@ -1,13 +1,13 @@
 import React from 'react'
 
 const RestaurantsFeatures = () => {
-      const features = [
-    ["Outdoor seating", "Accepts reservations"],
-    ["Accepts credit cards", "Delivery"],
-    ["Kid friendly", "Wheelchair accessible"],
-    ["Take-out", "Wifi"],
-    ["Pet-friendly"],
-  ];
+    const features = [
+        ["Outdoor seating", "Accepts reservations"],
+        ["Accepts credit cards", "Delivery"],
+        ["Kid friendly", "Wheelchair accessible"],
+        ["Take-out", "Wifi"],
+        ["Pet-friendly"],
+    ];
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-[14px]">
             {features.map((row, idx) => (
