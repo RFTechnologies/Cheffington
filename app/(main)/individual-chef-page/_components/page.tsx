@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ReviewItem = () => {
-  return(
+  return (
     <div className="flex flex-col sm:flex-row gap-6 md:gap-8 pb-8 sm:pb-10 border-b border-black/60 last:border-0 last:pb-0">
       {/* Reviewer */}
       <div className="sm:w-32 shrink-0 flex flex-row sm:flex-col items-center sm:items-start gap-4 sm:gap-0">
@@ -26,9 +26,9 @@ const ReviewItem = () => {
           Month XX, YEAR
         </p>
         <p className="text-[12px] sm:text-[13px] md:text-sm leading-relaxed text-justify font-semibold">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis commodo metus vitae urna eleifend, 
-          a tristique sapien fringilla. Aliquam scelerisque ante tellus, eget consequat mi sollicitudin vel. 
-          Duis viverra semper mauris. Pellentesque iaculis purus sollicitudin ligula cursus vestibulum. 
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis commodo metus vitae urna eleifend,
+          a tristique sapien fringilla. Aliquam scelerisque ante tellus, eget consequat mi sollicitudin vel.
+          Duis viverra semper mauris. Pellentesque iaculis purus sollicitudin ligula cursus vestibulum.
           Integer aliquam urna vitae porta ultrices. Fusce aliquam odio vel nunc lacinia volutpat ac non diam.
         </p>
       </div>
