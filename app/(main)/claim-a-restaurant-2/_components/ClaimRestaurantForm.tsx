@@ -1,5 +1,4 @@
 import Button from '@/components/Button'
-import React from 'react'
 
 const ClaimRestaurantForm = () => {
     return (
@@ -19,7 +18,7 @@ const ClaimRestaurantForm = () => {
                         <span className="md:text-[20px] text-[16px] tracking-[-8%] font-medium">Takes Reservations</span>
                     </label>
                 </div>
-                <Button className='w-full!' title='Send' />
+                <Button className='w-full!' title='Send'  />
                 <div className='flex items-center justify-between mt-5.5 gap-1 gap-y-4 flex-wrap'>
                     <div className='body-text'>Not a member?  <a href='/join-2-creat-profile' className='underline underline-offset-2  '>Sign up here. </a></div>
                     <a href='' className='underline underline-offset-2 body-text'>Forgot password?</a>
